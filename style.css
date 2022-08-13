@@ -4,8 +4,10 @@
     box-sizing:border-box;
 }
 :root{
-    --ff-heading: 'Epiloge', sans-serif;
-    --ff-texting: 'Open sans', sans-serif;
+    --ff-heading:
+    'Epiloge', sans-serif;
+    --ff-texting:
+    'Open sans', sans-serif;
 
     --hue:200;
     --bg-primary:
@@ -13,11 +15,13 @@
     --fc-primary:
     hsl(var(--hue), 50%, 80%);
     --fc-secondary:
-     hsl(var(--hue), 0%, 100%);
-
-     font-size: 62.5%;
+    hsl(var(--hue), 0%, 100%);
+    font-size: 62.5%;
     --fs-body: 1.6rem;
-    --fs-header: 4rem;
+    --fs-heading:
+    clamp(4rem, 1rem + 5vw, 5.6rem); /* Adiciona um parâmetro flexível */
+    --fs-heading-sm:
+    clamp(3rem, 0.5rem + 4.5vw, 5rem);
 }
 
 body{
@@ -38,7 +42,6 @@ body{
 img{
     width: 100%;
     height: auto; /* Ajusta a largura dos elementos */ 
-    filter: ;
 }
 
 header{
@@ -60,7 +63,7 @@ header p {
 }
 
 header h1{
-    font-size: 4rem;
+    font-size: var(--fs-heading);
     font-weight: 800;
     line-height: 4.8rem;
 }
@@ -96,7 +99,7 @@ main{
     left: 2.8rem;
 
     font-weight: 800;
-    font-size: var(--fs-header);
+    font-size: var(--fs-heading-sm);
     
     display: flex;
     flex-direction: column;
@@ -147,10 +150,6 @@ main{
     }
 }
 @media(min-width: 700px){
-
-    :root{
-        --fs-heading: 5.6rem;
-    }
     .page{
         max-width: 117rem;
         padding: 0 5rem;
